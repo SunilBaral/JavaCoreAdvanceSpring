@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<!-- Define bean for Addr -->
+	<bean id="addr" class="com.springcore.col.ci.Addr">
+		<constructor-arg>
+			<list>
+				<value>123 Main St</value>
+				<value>456 Elm St</value>
+				<value>789 Oak St</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<!-- Define bean for Student -->
+	<bean id="student" class="com.springcore.col.ci.Student">
+		<constructor-arg>
+			<list>
+				<value>John Doe</value>
+			</list>
+		</constructor-arg>
+		<constructor-arg>
+			<set>
+				<value>Math</value>
+				<value>Science</value>
+				<value>History</value>
+			</set>
+		</constructor-arg>
+		<constructor-arg ref="addr" />
+	</bean>
+</beans>
+
